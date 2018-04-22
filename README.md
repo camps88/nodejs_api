@@ -51,6 +51,8 @@ Run this commands in order to apply changes:
   git fetch upstream
 ```
 
+More details at [atlassian](https://www.atlassian.com/git?utm_source=basic-git-commands&utm_medium=link&utm_campaign=git-microsite)
+
 ## API in NodeJS
 
 Soon.
