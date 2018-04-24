@@ -8,7 +8,7 @@ Documentation about NodeJS API for GAP.
 ```
   git init
   git remote add upstream https://github.com/JuanjoZanabria/nodejs_api.git
-  git remote add origin https://github.com/JuanjoZanabria o camps88/ndoejs_api.git
+  git remote add origin https://github.com/JuanjoZanabria o camps88/nodejs_api.git
   git remote -v
 ```
 ### Branchs
@@ -34,7 +34,7 @@ Run this commands in order to apply changes:
 * Push new files
 ```
   git add nombrefichero
-  git commit -m comentario
+  git commit -m comentario (commitN-Fecha-Autor-Descripcion)
   git push origin master (actualiza ORIGIN desde Local)
   git push upstream master (actualiza UPSTREAM desde Local)
 ```
