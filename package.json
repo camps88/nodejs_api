@@ -8,12 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JuanjoZanabria/nodejs_api.git"
+    "url": "git+https://github.com/camps88/nodejs_api.git"
   },
   "author": "Juan Jose Zanabria y David Campos",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JuanjoZanabria/nodejs_api/issues"
+    "url": "https://github.com/camps88/nodejs_api/issues"
   },
-  "homepage": "https://github.com/JuanjoZanabria/nodejs_api#readme"
+  "homepage": "https://github.com/camps88/nodejs_api#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
