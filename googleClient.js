@@ -2,8 +2,8 @@ const vision = require('@google-cloud/vision');
 const credentials = {
   keyFilename: '../gaptfgkey.json'
 };
-
 const client = new vision.ImageAnnotatorClient(credentials);
+
 class googleClient {
 
   constructor() {}
@@ -35,7 +35,7 @@ class googleClient {
     return JSON.stringify(formatFeature)
   }
 
-  print(str){
+  print(str) {
     console.log(str);
   }
 }
