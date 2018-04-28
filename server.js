@@ -1,21 +1,24 @@
+/*
+Requires
+*/
 const express = require('express');
 const googleClient = require('./googleClient');
-
+/*
+Atributos
+*/
 const server = express();
 const instanceGoogleClient = new googleClient();
-
+/*
+Lanzar el servidor en el puerto 3003
+*/
 server.listen(3003, function() {
   console.log("Server is up and listening on 3003...");
 })
 /*
 desc: Asignar token al usuario
-params:
-req{
-credenciales (correo)
-},
-res{
-token de usuario
-}
+queryParams: N/A
+req: credenciales (correo)
+res: token
 */
 server.post("/validation", function(req, res) {
   console.log("Responding to root route");
@@ -23,72 +26,56 @@ server.post("/validation", function(req, res) {
   res.send("Respuesta");
 })
 /*
-desc: Identifica la fotografia y devuelve la informacion de los productos
-params:
-req{
-url de la imagen, token
-},
-res{
-respuesta en JSON, id de solicitud
-}
+desc: Identifica fotografia y devuelve toda la informacion
+queryParams: N/A
+req: token, imageUri
+res: resultado
 */
-server.post("/order", function(req, res) {
+server.post("/image", function(req, res) {
   console.log("Responding to root route");
   instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
   res.send("Respuesta");
 })
 /*
-desc: Devuelve todas las busquedas del usuario
-params:
-req{
-url de la imagen, token
-},
-res{
-respuesta en JSON, id de solicitud
-}
+desc: Permite filtrar una imagen por idSolicitud
+queryParams: idSolicitud
+req: N/A
+res: resultado
 */
-server.get("/order", function(req, res) {
-  /*req.query.categoria
-  req.query.safeSearch
-  req.query.score
-  req.query.color
-  req.query.shops*/
+server.get("/image", function(req, res) {
   console.log("Responding to root route");
   instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
   res.send("Respuesta");
 })
 /*
-desc: Filtra un resultado
-params:
-req{
-url de la imagen, token
-},
-res{
-respuesta en JSON
-}
+desc: Permite ver y filtrar las busquedas recientes por lotes
+queryParams: token, filtros, lote
+req: N/A
+res: resultado
 */
-server.get("/order/:order",
-function(req, res) {
-  /*req.query.categoria
-  req.query.safeSearch
-  req.query.score
-  req.query.color
-  req.query.shops*/
+server.get("/recentSearchs", function(req, res) {
   console.log("Responding to root route");
   instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
-  res.send();
+  res.send("Respuesta");
 })
 /*
-desc: Identifica la fotografia y devuelve la informacion de los productos
-params:
-req{
-credenciales
-}
-res{
-respuesta en JSON, id de solicitud
-}
+desc: Permite ver y filtrar las busquedas populares por lotes
+queryParams: filtros, lote
+req: N/A
+res: resultado
 */
-server.get("/recentsearch?token=", function(req, res) {
+server.get("/popularSearchs", function(req, res) {
+  console.log("Responding to root route");
+  instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
+  res.send("Respuesta");
+})
+/*
+desc: Permite ver y filtrar los favoritos por lotes
+queryParams: token, filtros, lote
+req: N/A
+res: resultado
+*/
+server.get("/favoriteSearchs", function(req, res) {
   console.log("Responding to root route");
   instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
   res.send("Respuesta");
