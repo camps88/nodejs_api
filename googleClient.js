@@ -17,8 +17,21 @@ class googleClient {
         }
       },
       features: [{
-        feature
-      }],
+          type: "WEB_DETECTION"
+        },
+        {
+          type: "LABEL_DETECTION"
+        },
+        {
+          type: "SAFE_SEARCH_DETECTION"
+        },
+        {
+          type: "LOGO_DETECTION"
+        },
+        {
+          type: "IMAGE_PROPERTIES"
+        }
+      ],
     }
   }
   getImageAnnotated(request) {
