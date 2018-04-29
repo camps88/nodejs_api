@@ -14,12 +14,13 @@ const instanceGoogleClient = new googleClient();
 passport.use(
   new GoogleStrategy({
     //options for google strat
+    callbackURL: '/auth/google/redirect',
     clientID: '720993327430-emfmqq94uksa9s6r45h69n2muj7n3np3.apps.googleusercontent.com',
     clientSecret: 'MuZC4ntbHXVGQfuU0jvPI2Er'
-  }), () => {
+  }, () => {
     //passport callback function
   })
-
+)
 /*
 Lanzar el servidor en el puerto 3003
 */
