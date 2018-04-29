@@ -3,11 +3,23 @@ Requires
 */
 const express = require('express');
 const googleClient = require('./googleClient');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20');
 /*
 Atributos
 */
 const server = express();
 const instanceGoogleClient = new googleClient();
+
+passport.use(
+  new GoogleStrategy({
+    //options for google strat
+    clientID: '720993327430-emfmqq94uksa9s6r45h69n2muj7n3np3.apps.googleusercontent.com',
+    clientSecret: 'MuZC4ntbHXVGQfuU0jvPI2Er'
+  }), () => {
+    //passport callback function
+  })
+
 /*
 Lanzar el servidor en el puerto 3003
 */
@@ -20,9 +32,9 @@ queryParams: N/A
 req: credenciales (correo)
 res: token
 */
-server.post("/validation", function(req, res) {
+server.post("/auth", function(req, res) {
   console.log("Responding to root route");
-  instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
+  instanceGoogleClient.print("Task 1: Validate Google Account --- Successful");
   res.send("Respuesta");
 })
 /*
@@ -33,7 +45,7 @@ res: resultado
 */
 server.post("/image", function(req, res) {
   console.log("Responding to root route");
-  instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
+  instanceGoogleClient.print("Task 2: Create GoogleClient --- Successful");
   res.send("Respuesta");
 })
 /*
@@ -44,7 +56,7 @@ res: resultado
 */
 server.get("/image", function(req, res) {
   console.log("Responding to root route");
-  instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
+  instanceGoogleClient.print("Task 3: Create GoogleClient --- Successful");
   res.send("Respuesta");
 })
 /*
@@ -55,7 +67,7 @@ res: resultado
 */
 server.get("/recentSearchs", function(req, res) {
   console.log("Responding to root route");
-  instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
+  instanceGoogleClient.print("Task 4: Create GoogleClient --- Successful");
   res.send("Respuesta");
 })
 /*
@@ -66,7 +78,7 @@ res: resultado
 */
 server.get("/popularSearchs", function(req, res) {
   console.log("Responding to root route");
-  instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
+  instanceGoogleClient.print("Task 5: Create GoogleClient --- Successful");
   res.send("Respuesta");
 })
 /*
@@ -77,6 +89,6 @@ res: resultado
 */
 server.get("/favoriteSearchs", function(req, res) {
   console.log("Responding to root route");
-  instanceGoogleClient.print("Task 0: Create GoogleClient --- Successful");
+  instanceGoogleClient.print("Task 6: Create GoogleClient --- Successful");
   res.send("Respuesta");
 })
